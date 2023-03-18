@@ -1,4 +1,6 @@
 <?php
+    require '/path/to/vendor/autoload.php';
+    
 // sprawdzenie, czy formularz został wysłany
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
