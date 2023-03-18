@@ -37,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // wysłanie e-maila
     if (mail($to, $subject, $body, $headers)) {
         echo "Wiadomość została wysłana.";
+        header( 'Location: https://cyberads.pl' ); 
     } else {
         echo "Wysłanie wiadomości nie powiodło się.";
     }
