@@ -18,6 +18,11 @@
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/tooplate-ben-resume-style.css">
+    <style>
+      findme {
+        display: none;
+      }
+    </style>
 
 </head>
 
@@ -362,7 +367,7 @@ Wdrażanie bezpiecznego oprogramowania wymaga systematycznych działań, od test
     <br/>4. Szybkie iteracje: Warto stosować praktyki takie jak Agile, Scrum lub Kanban, które umożliwiają szybkie iteracje i elastyczne dostosowanie się do zmian.
 
     <br/>5. Współpraca: Ważne jest, aby zespół deweloperski, QA oraz dział IT pracowali razem i na bieżąco komunikowali się ze sobą. Współpraca ta pozwoli na uniknięcie kosztownych pomyłek i ograniczy ryzyko.
-<br/>
+
 Stosowanie powyższych strategii pozwoli na zminimalizowanie ryzyka i kosztów związanych z wdrożeniem nowych aplikacji.</p>
                           </div>
                         </div>
@@ -383,13 +388,15 @@ Stosowanie powyższych strategii pozwoli na zminimalizowanie ryzyka i kosztów z
         <div class="row">
 
           <div class="col-lg-6 col-md-6 col-12">
-            <form action="#" method="get" class="contact-form webform"  role="form">
-                
-                <div class="form-group d-flex flex-column-reverse">
-                    <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="">
+            <form action="mail.php" method="POST" class="contact-form webform"  role="form">
 
-                    <label for="cf-name" class="webform-label">Imię i nazwisko</label>
+                <findme>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="findme" id="findme">
+
+                    <label for="name" class="webform-label">Wpisz</label>
                 </div>
+                </findme>
 
                 <div class="form-group d-flex flex-column-reverse">
                     <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="">
