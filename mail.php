@@ -20,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // sprawdzenie, czy pole z kodem antyspamowym jest puste
-    if (!empty($_POST["honeypot"])) {
+    if (!empty($_POST["findme"])) {
         echo "Wysłanie formularza nie powiodło się.";
         exit;
     }
     
     // ustawienie odbiorcy, tematu i treści e-maila
-    $to = "adres@odbiorcy.pl";
+    $to = "admin@cyberads.pl";
     $subject = "Wiadomość ze strony internetowej";
     $body = "Od: $name\n E-mail: $email\n Wiadomość:\n $message";
     
