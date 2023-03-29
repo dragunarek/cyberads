@@ -22,6 +22,22 @@
       findme {
         display: none;
       }
+      .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+      }
+      .modal-content {
+            background-color: #fff;
+            padding: 20px;
+      }
     </style>
 
 </head>
@@ -386,7 +402,7 @@ Stosowanie powyższych strategii pozwoli na zminimalizowanie ryzyka i kosztów z
         <div class="row">
 
           <div class="col-lg-6 col-md-6 col-12">
-            <form action="mail.php" method="POST" class="contact-form webform"  role="form">
+            <form action="mail.php" method="post" class="contact-form webform"  role="form">
 
                 <findme>
                 <div class="form-group">
@@ -415,7 +431,35 @@ Stosowanie powyższych strategii pozwoli na zminimalizowanie ryzyka i kosztów z
                     <label for="message" class="webform-label">Treść wiadomości</label>
                 </div>
 
-                <button type="submit" class="form-control" id="submit-button" name="submit">WYŚLIJ</button>
+                <button >WYŚLIJ</button>
+                <script>
+        
+                         // Po wysłaniu formularza i otrzymaniu odpowiedzi zwrotnej:
+                          if(response == "success") {
+                              // Utworzenie elementu div dla okna modalnego
+                              var modal = document.createElement('div');
+                              modal.classList.add('modal');
+
+                              // Utworzenie elementu div dla zawartości okna modalnego
+                              var modalContent = document.createElement('div');
+                              modalContent.classList.add('modal-content');
+                              modalContent.innerHTML = '<h2>Twój email został wysłany!</h2><p>Dziękujemy za kontakt. Skontaktujemy się z Tobą najszybciej jak to możliwe.</p><button onclick="hideModal()">Zamknij</button>';
+
+                              // Dodanie zawartości do okna modalnego
+                              modal.appendChild(modalContent);
+
+                              // Dodanie okna modalnego do strony
+                              document.body.appendChild(modal);
+
+                              // Funkcja, która zamyka okno modalne po kliknięciu przycisku "Zamknij"
+                              function hideModal() {
+                                  // Usunięcie okna modalnego ze strony
+                                  var modal = document.querySelector('modal');
+                                  document.body.removeChild(modal);
+                              }
+                            }
+                            
+                </script>
             </form>
           </div>
 
